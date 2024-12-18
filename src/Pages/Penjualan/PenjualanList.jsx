@@ -85,6 +85,8 @@ function PenjualanList({ onEdit, onAddNew, refreshTrigger }) {
               <TableCell>Tanggal</TableCell>
               <TableCell>Pelanggan</TableCell>
               <TableCell>Barang</TableCell>
+              <TableCell>Alamat</TableCell>
+              <TableCell>Warma</TableCell>
               <TableCell>Quantity</TableCell>
               <TableCell>Subtotal</TableCell>
               <TableCell align="center">Aksi</TableCell>
@@ -99,6 +101,8 @@ function PenjualanList({ onEdit, onAddNew, refreshTrigger }) {
                 <TableCell>{item?.penjualan?.tgl}</TableCell>
                 <TableCell>{item.penjualan?.pelanggan?.nama}</TableCell>
                 <TableCell>{item.barang?.nama}</TableCell>
+                <TableCell>{item.penjualan?.pelanggan.alamat}</TableCell>
+                <TableCell>{item.barang?.warna}</TableCell>
                 <TableCell>{item?.qty}</TableCell>
                 <TableCell>
                   Rp {(item?.qty * item.barang?.harga).toLocaleString("id-ID")}

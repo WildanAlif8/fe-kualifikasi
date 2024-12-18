@@ -18,6 +18,7 @@ function FormPelanggan({ pelangganToEdit, onSave }) {
     nama: "",
     jenis_kelamin: "",
     domisili: "",
+    alamat: "",
   });
 
   const [errors, setErrors] = useState({});
@@ -26,7 +27,7 @@ function FormPelanggan({ pelangganToEdit, onSave }) {
     if (pelangganToEdit) {
       setFormData(pelangganToEdit);
     } else {
-      setFormData({ nama: "", jenis_kelamin: "", domisili: "" });
+      setFormData({ nama: "", jenis_kelamin: "", domisili: "", alamat:"" });
     }
   }, [pelangganToEdit]);
 
@@ -55,6 +56,9 @@ function FormPelanggan({ pelangganToEdit, onSave }) {
     }
     if (!formData.domisili.trim()) {
       newErrors.domisili = "Domisili harus diisi";
+    }
+    if (!formData.alamat.trim()) {
+      newErrors.alamat = "Alamat harus diisi";
     }
     return newErrors;
   };
@@ -141,6 +145,17 @@ function FormPelanggan({ pelangganToEdit, onSave }) {
           onChange={handleChange}
           error={!!errors.domisili}
           helperText={errors.domisili}
+          variant="outlined"
+          required
+        />
+        <TextField
+          fullWidth
+          label="Alamat"
+          name="alamat"
+          value={formData.alamat}
+          onChange={handleChange}
+          error={!!errors.alamat}
+          helperText={errors.alamat}
           variant="outlined"
           required
         />

@@ -22,6 +22,8 @@ function FormPenjualan({ penjualanToEdit, onSave }) {
   const [formData, setFormData] = useState({
     tgl: "",
     pelanggan: "",
+    alamat: "",
+    warna: "",
     subtotal: 0,
     items: [{ barang: "", qty: 1 }],
   });
@@ -44,6 +46,8 @@ function FormPenjualan({ penjualanToEdit, onSave }) {
       setFormData({
         tgl: "",
         pelanggan: "",
+        warna: "",
+        alamat: "",
         subtotal: 0,
         items: [{ barang: "", qty: 1 }],
       });
@@ -143,6 +147,8 @@ function FormPenjualan({ penjualanToEdit, onSave }) {
       const dataToSubmit = {
         tgl: formData.tgl,
         pelanggan: formData.pelanggan,
+        alamat: formData.alamat,
+        warna: formData.pelanggan,
         subtotal: formData.subtotal,
         items: formData.items,
       };
@@ -205,6 +211,23 @@ function FormPenjualan({ penjualanToEdit, onSave }) {
               </Select>
             </FormControl>
           </Grid>
+          {/* <Grid item xs={12} md={6}>
+            <FormControl fullWidth required>
+              <InputLabel>Warna</InputLabel>
+              <Select
+                name="warna"
+                value={formData.warna}
+                label="warna"
+                onChange={(e) => handleChange(e)}
+              >
+                {barangs.map((barang) => (
+                      <MenuItem key={barang.kode} value={barang.kode}>
+                        {barang.nama} - Rp {barang.harga} - Warna {barang.warna}
+                      </MenuItem>
+                    ))}
+              </Select>
+            </FormControl>
+          </Grid> */}
 
           {/* Dynamic Item Rows */}
           {formData.items.map((item, index) => (
@@ -220,7 +243,7 @@ function FormPenjualan({ penjualanToEdit, onSave }) {
                   >
                     {barangs.map((barang) => (
                       <MenuItem key={barang.kode} value={barang.kode}>
-                        {barang.nama} - Rp {barang.harga}
+                        {barang.nama} - Rp {barang.harga} - Warna {barang.warna}
                       </MenuItem>
                     ))}
                   </Select>
@@ -302,6 +325,25 @@ function FormPenjualan({ penjualanToEdit, onSave }) {
               }}
             />
           </Grid>
+
+          <Grid item xs={12} md={6}>
+            <FormControl fullWidth required>
+              <InputLabel>Alamat</InputLabel>
+              <Select
+                name="alamat"
+                value={formData.alamat}
+                label="alamat"
+                onChange={(e) => handleChange(e)}
+              >
+                {pelanggans.map((pelanggan) => (
+                  <MenuItem key={pelanggan.kode} value={pelanggan.kode}>
+                    {pelanggan.alamat}
+                  </MenuItem>
+                ))}
+              </Select>
+            </FormControl>
+          </Grid>
+
 
           <Grid item xs={12}>
             <Button type="submit" variant="contained" color="primary" fullWidth>

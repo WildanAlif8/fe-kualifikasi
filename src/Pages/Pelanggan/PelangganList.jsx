@@ -94,6 +94,7 @@ function PelangganList({ onEdit, refreshTrigger, onAddNew }) {
               <TableCell>Nama</TableCell>
               <TableCell>Jenis Kelamin</TableCell>
               <TableCell>Domisili</TableCell>
+              <TableCell>Alamat</TableCell>
               <TableCell align="center">Aksi</TableCell>
             </TableRow>
           </TableHead>
@@ -116,6 +117,7 @@ function PelangganList({ onEdit, refreshTrigger, onAddNew }) {
                   />
                 </TableCell>
                 <TableCell>{pelanggan.domisili}</TableCell>
+                <TableCell>{pelanggan.alamat}</TableCell>
                 <TableCell align="center">
                   <IconButton color="primary" onClick={() => onEdit(pelanggan)}>
                     <EditIcon />

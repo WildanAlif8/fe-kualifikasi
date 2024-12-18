@@ -88,6 +88,7 @@ function BarangList({ onEdit = () => {}, onAddNew, refreshTrigger }) {
               <TableCell>No</TableCell>
               <TableCell>Nama Barang</TableCell>
               <TableCell>Harga</TableCell>
+              <TableCell>Warna</TableCell>
               <TableCell>Kategori</TableCell>
               <TableCell align="center">Aksi</TableCell>
             </TableRow>
@@ -110,6 +111,7 @@ function BarangList({ onEdit = () => {}, onAddNew, refreshTrigger }) {
                   }).format(barang.harga)}
                 </TableCell>
                 <TableCell>{barang.kategori}</TableCell>
+                <TableCell>{barang.warna}</TableCell>
                 <TableCell align="center">
                   <IconButton color="primary" onClick={() => onEdit(barang)}>
                     <EditIcon />

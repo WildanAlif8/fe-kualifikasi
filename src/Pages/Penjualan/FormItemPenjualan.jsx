@@ -80,7 +80,7 @@ function FormItemPenjualan({ itemToEdit, onSave, onCancel }) {
               >
                 {barangs.map((barang) => (
                   <MenuItem key={barang.kode} value={barang.kode}>
-                    {barang.nama} - Rp {barang.harga}
+                    {barang.nama} - Rp {barang.harga} - Warna {barang.warna}
                   </MenuItem>
                 ))}
               </Select>

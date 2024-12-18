@@ -13,6 +13,7 @@ function FormBarang({ barangToEdit, onSave }) {
   const [formData, setFormData] = useState({
     nama: "",
     harga: "",
+    warna: "",
     kategori: "",
   });
 
@@ -20,7 +21,7 @@ function FormBarang({ barangToEdit, onSave }) {
     if (barangToEdit) {
       setFormData(barangToEdit);
     } else {
-      setFormData({ nama: "", harga: "", kategori: "" });
+      setFormData({ nama: "", harga: "", kategori: "" , warna: ""});
     }
   }, [barangToEdit]);
 
@@ -70,6 +71,15 @@ function FormBarang({ barangToEdit, onSave }) {
           label="Nama Barang"
           name="nama"
           value={formData.nama}
+          onChange={handleChange}
+          required
+          variant="outlined"
+        />
+        <TextField
+          fullWidth
+          label="Warna"
+          name="warna"
+          value={formData.warna}
           onChange={handleChange}
           required
           variant="outlined"
